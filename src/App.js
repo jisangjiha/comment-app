@@ -1,5 +1,11 @@
+import AddComment from "./AddComment";
+
 function App() {
-  return <div>hi</div>;
+  return (
+    <main>
+      <AddComment />
+    </main>
+  );
 }
 
 export default App;
