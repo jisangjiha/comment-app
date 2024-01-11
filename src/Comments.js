@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import classes from "./Commets.module.css";
+
 const Comments = (props) => {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
@@ -22,9 +24,9 @@ const Comments = (props) => {
   };
 
   return (
-    <div>
+    <div className={classes["comments"]}>
       <h1>Comments ({comments.length})</h1>
-      <form onSubmit={onSubmit}>
+      <form className={classes["submit"]} onSubmit={onSubmit}>
         <input
           onChange={onChange}
           value={comment}
@@ -34,7 +36,7 @@ const Comments = (props) => {
         <button>Add Comment</button>
       </form>
       <hr />
-      <ul>
+      <ul className={classes["list"]}>
         {comments.map((comment, index) => (
           <div>
             <li key={comment.id}>{comment}</li>

@@ -1,0 +1,20 @@
+.comments {
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.submit input {
+  width: 300px;
+  height: 30;
+}
+
+.list {
+  padding: 0;
+  list-style: none;
+}
+
+.list div {
+  display: flex;
+  justify-content: space-between;
+}
