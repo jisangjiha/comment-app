@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddComment() {
+const Comments = (props) => {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
 
@@ -14,7 +14,12 @@ function AddComment() {
     setComment("");
   };
 
-  //console.log(comments);
+  const deleteCommentHandler = (index) => {
+    const newComments = comments.filter((_, i) => {
+      return i !== index;
+    });
+    setComments(newComments);
+  };
 
   return (
     <div>
@@ -30,12 +35,15 @@ function AddComment() {
       </form>
       <hr />
       <ul>
-        {comments.map((item, index) => (
-          <li key={index}>{item}</li>
+        {comments.map((comment, index) => (
+          <div>
+            <li key={comment.id}>{comment}</li>
+            <button onClick={() => deleteCommentHandler(index)}>Delete</button>
+          </div>
         ))}
       </ul>
     </div>
   );
-}
+};
 
-export default AddComment;
+export default Comments;

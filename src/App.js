@@ -1,9 +1,9 @@
-import AddComment from "./AddComment";
+import Comments from "./Comments";
 
 function App() {
   return (
     <main>
-      <AddComment />
+      <Comments />
     </main>
   );
 }
